@@ -245,7 +245,6 @@ GameObject:
   - component: {fileID: 543361466}
   - component: {fileID: 543361465}
   - component: {fileID: 543361468}
-  - component: {fileID: 543361469}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -371,19 +370,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &543361469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543361464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08210f9f22b298c41b9a9188c7be92da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MouseMovement
-  mouseSensitivity: 200
 --- !u!1 &1407314870
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +381,7 @@ GameObject:
   - component: {fileID: 1407314873}
   - component: {fileID: 1407314872}
   - component: {fileID: 1407314874}
+  - component: {fileID: 1407314875}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -465,6 +452,19 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &1407314875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407314870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08210f9f22b298c41b9a9188c7be92da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MouseMovement
+  mouseSensitivity: 200
 --- !u!1 &1561679937
 GameObject:
   m_ObjectHideFlags: 0
