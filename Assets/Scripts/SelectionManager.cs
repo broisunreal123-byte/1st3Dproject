@@ -20,7 +20,7 @@ public class SelectionManager : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 10f))
         {
             var interactable = hit.transform.GetComponent<InteractableObject>();
 
@@ -34,6 +34,10 @@ public class SelectionManager : MonoBehaviour
                 interaction_Info_UI.SetActive(false);
             }
 
+        }
+        else
+        {
+            interaction_Info_UI.SetActive(false);
         }
     }
 }
