@@ -28,6 +28,11 @@ public class SelectionManager : MonoBehaviour
             {
                 interaction_text.text = interactable.GetItemName();
                 interaction_Info_UI.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    Debug.Log("You grabbed " + interactable.GetItemName());
+                    Destroy(interactable.gameObject);
+                }
             }
             else
             {

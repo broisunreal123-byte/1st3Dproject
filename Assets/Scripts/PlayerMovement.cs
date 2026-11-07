@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //checking if we hit the ground to reset our falling velocity, otherwise we will fall faster the next time
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        Debug.Log(isGrounded);
+        
 
         if (isGrounded && velocity.y < 0)
         {
