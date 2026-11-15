@@ -20,6 +20,7 @@ public class SelectionManager : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+        //Interacting objects
         if (Physics.Raycast(ray, out hit, 10f))
         {
             var interactable = hit.transform.GetComponent<InteractableObject>();
@@ -30,7 +31,16 @@ public class SelectionManager : MonoBehaviour
                 interaction_Info_UI.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    InventorySystem.Instance.AddToInvetory(interactable.GetItemName());
+                    if (!InventorySystem.Instance.CheckIfFull())
+                    {
+                        InventorySystem.Instance.AddToInvetory(interactable.GetItemName());
+                        Destroy(interactable.gameObject);
+                        
+                    }
+                    else
+                    {
+                        Debug.Log("Full fat ass!");
+                    }
                 }
             }
             else

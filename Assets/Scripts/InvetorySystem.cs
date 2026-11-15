@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Mono.Cecil;
 using NUnit.Framework;
+using Unity.VisualScripting;
 using UnityEngine;
- 
+
 public class InventorySystem : MonoBehaviour
 {
- 
-   public static InventorySystem Instance { get; set; }
- 
+
+    public static InventorySystem Instance { get; set; }
+
     public GameObject inventoryScreenUI;
 
     public List<GameObject> slotList = new List<GameObject>();
@@ -22,9 +23,11 @@ public class InventorySystem : MonoBehaviour
 
     public bool isOpen;
 
-    public bool isFull;
- 
- 
+    //public bool isFull;
+
+
+
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -36,8 +39,8 @@ public class InventorySystem : MonoBehaviour
             Instance = this;
         }
     }
- 
- 
+
+
     void Start()
     {
         isOpen = false;
@@ -46,7 +49,7 @@ public class InventorySystem : MonoBehaviour
 
     private void PopulateSlotList()
     {
-        foreach(Transform child in inventoryScreenUI.transform)
+        foreach (Transform child in inventoryScreenUI.transform)
         {
             if (child.CompareTag("Slot"))
             {
@@ -57,15 +60,15 @@ public class InventorySystem : MonoBehaviour
 
     void Update()
     {
- 
+
         if (Input.GetKeyDown(KeyCode.I) && !isOpen)
         {
- 
-		    Debug.Log("i is pressed");
+
+            Debug.Log("i is pressed");
             inventoryScreenUI.SetActive(true);
             isOpen = true;
             Cursor.lockState = CursorLockMode.None;
- 
+
         }
         else if (Input.GetKeyDown(KeyCode.I) && isOpen)
         {
@@ -73,32 +76,55 @@ public class InventorySystem : MonoBehaviour
             isOpen = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-        
+
     }
 
     public void AddToInvetory(String name)
     {
-        
-        if (CheckIfFull())
-        {
-            Debug.Log("Full fat ass!");
-        }
-        else
-        {
-          whatSlotToEquip = FindNextEmptySlot();
-          itemToAdd = Instantiate(Resources.Load<GameObject>(name), whatSlotToEquip.transform.position,whatSlotToEquip.transform.rotation);
-          itemList.Add(name);  
-        }
+
+        whatSlotToEquip = FindNextEmptySlot();
+
+        itemToAdd = Instantiate
+        (Resources.Load<GameObject>(name), whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
+
+        itemToAdd.transform.SetParent(whatSlotToEquip.transform);
+
+        itemList.Add(name);
+
     }
 
     private GameObject FindNextEmptySlot()
     {
-        throw new NotImplementedException();
+        foreach (GameObject slot in slotList)
+        {
+            if (slot.transform.childCount == 0)
+            {
+                return slot;
+            }
+        }
+        return new GameObject();
+        
     }
 
     public bool CheckIfFull()
     {
-        return isFull;
+        int count = 0;
+        foreach (GameObject slot in slotList)
+        {
+            if (slot.transform.childCount > 0)
+            {
+                count++;
+            }
+        }
+        if (count >= 14)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
     }
- 
+
 }

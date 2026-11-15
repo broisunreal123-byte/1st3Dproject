@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5350752
+      value: -0.6084552
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000015739954
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.45808
+      value: 0.60046005
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -69,15 +69,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100042, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4204612363710175464}
-    - targetCorrespondingSourceObject: {fileID: 100042, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6362959454469759008}
-    - targetCorrespondingSourceObject: {fileID: 100042, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5420694460387400264}
-    - targetCorrespondingSourceObject: {fileID: 100042, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7754024695825409233}
   m_SourcePrefab: {fileID: 100100000, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
 --- !u!1 &7099621982747058646 stripped
 GameObject:
@@ -122,45 +113,6 @@ MonoBehaviour:
   waitCounter: 0
   isWalking: 0
 --- !u!114 &4204612363710175464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7099621982747058646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52854a336b5d01a4bbd84f6d7dffca94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
-  ItemName: Bunny
---- !u!114 &6362959454469759008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7099621982747058646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52854a336b5d01a4bbd84f6d7dffca94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
-  ItemName: Bunny
---- !u!114 &5420694460387400264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7099621982747058646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52854a336b5d01a4bbd84f6d7dffca94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
-  ItemName: Bunny
---- !u!114 &7754024695825409233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
