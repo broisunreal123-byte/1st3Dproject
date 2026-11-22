@@ -67,14 +67,14 @@ public class InventorySystem : MonoBehaviour
             Debug.Log("i is pressed");
             inventoryScreenUI.SetActive(true);
             isOpen = true;
-            Cursor.lockState = CursorLockMode.None;
+            
 
         }
         else if (Input.GetKeyDown(KeyCode.I) && isOpen)
         {
             inventoryScreenUI.SetActive(false);
             isOpen = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            
         }
 
     }

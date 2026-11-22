@@ -35,6 +35,16 @@ public class MouseMovement : MonoBehaviour
 
     //applying both rotations
     transform.localRotation = Quaternion.Euler(xRotation, YRotation, 0f);
+    if (CraftingSystem.Instance.isOpen || InventorySystem.Instance.isOpen)
+    {
+      Cursor.lockState = CursorLockMode.None;
+    }else
+    {
+      Cursor.lockState = CursorLockMode.Locked;
+      {
+        
+      };
+    }
 
 
   }

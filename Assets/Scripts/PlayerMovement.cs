@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
     {
         //checking if we hit the ground to reset our falling velocity, otherwise we will fall faster the next time
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        bool isOpening = InventorySystem.Instance.isOpen;
-        if (!isOpening)
+       
+        if (!InventorySystem.Instance.isOpen || !CraftingSystem.Instance.isOpen)
         {
 
             if (isGrounded && velocity.y < 0)
