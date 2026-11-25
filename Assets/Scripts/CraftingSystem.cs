@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
 
 
 public class CraftingSystem : MonoBehaviour
@@ -38,6 +39,18 @@ public class CraftingSystem : MonoBehaviour
         isOpen = false;
         toolsBTN = craftingScreenUI.transform.Find("ToolsButton").GetComponent<Button>();
         toolsBTN.onClick.AddListener(OpenToolsCategory);
+        Axereq1 = toolScreenUI.transform.Find("Axe").transform.Find("req1").GetComponent<Text>();
+        Axereq2 = toolScreenUI.transform.Find("Axe").transform.Find("req2").GetComponent<Text>();
+        craftAxeBTN = toolScreenUI.transform.Find("Axe").Find("CraftAxe").GetComponent<Button>();
+        craftAxeBTN.onClick.AddListener(() => CraftAnyItem());
+    }
+
+    private void CraftAnyItem()
+    {
+        //add item into invetory
+
+
+        //remove crafted materials
     }
 
     public void OpenToolsCategory()
@@ -52,7 +65,7 @@ public class CraftingSystem : MonoBehaviour
         {
             craftingScreenUI.SetActive(true);
             isOpen = true;
-            Cursor.lockState = CursorLockMode.None;
+            
 
         }
         else if (Input.GetKeyDown(KeyCode.C) && isOpen)
@@ -60,7 +73,7 @@ public class CraftingSystem : MonoBehaviour
             craftingScreenUI.SetActive(false);
             toolScreenUI.SetActive(false);
             isOpen = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            
         }
 
     }
